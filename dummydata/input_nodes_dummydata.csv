@@ -1,0 +1,12 @@
+user_id,user_type,province,account_age_months,outbound_trx,inbound_trx,hit_count,reported_risk
+31,merchant,Jakarta,24,20,12,2,0
+32,customer,Bandung,12,8,7,1,1
+33,merchant,Surabaya,36,30,15,3,0
+34,customer,Jakarta,18,10,8,2,1
+35,merchant,Bandung,48,35,20,4,0
+36,customer,Surabaya,6,4,2,1,1
+37,merchant,Jakarta,60,45,25,3,0
+38,customer,Bandung,30,15,10,2,1
+39,merchant,Surabaya,12,10,5,1,0
+40,customer,Jakarta,24,12,9,2,1
+ 

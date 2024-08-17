@@ -1,0 +1,101 @@
+user_id,type,province,type_desc,business_segment,business_sub_segment,account_age_months,outbound_trx,inbound_trx,hit_count,reported_risk
+202000000131592867,customer,,basic service,-,-,23,111,0,0,0
+202100000008367665,customer,,basic service,-,-,15,2,0,3,1
+202100000007625507,customer,,basic service,-,-,17,5,0,0,1
+202000000077340025,customer,,basic service,-,-,56,1,0,0,0
+202000000115789168,customer,Lampung,full service,-,-,38,167,0,0,0
+202000000097608174,customer,Jawa Barat,full service,-,-,46,58,0,19,0
+201000000004314184,merchant,,Perorangan,Retail,Retail-non CICO,43,0,8,0,1
+202000000126220011,customer,Jawa Barat,full service,-,-,29,68,0,0,0
+202000000130183510,customer,,basic service,-,-,25,1,0,0,0
+202000000048727273,customer,Jawa Timur,full service,-,-,65,31,0,0,0
+202000000038500649,customer,,basic service,-,-,74,1,0,0,0
+202000000120410627,customer,Jawa Tengah,full service,-,-,35,170,0,0,0
+202000000055847207,customer,Sulawesi Tengah,full service,-,-,64,3,0,3,0
+202100000008271878,customer,,basic service,-,-,15,9,0,0,0
+202100000006263283,customer,Papua,full service,-,-,21,91,0,0,0
+202000000089573554,customer,Sumatera Barat,full service,-,-,49,1,0,0,0
+201000000004277683,merchant,,Perorangan,Retail,Retail-non CICO,43,0,1,0,1
+202000000008722879,customer,,basic service,-,-,92,4,0,0,0
+202000000130206713,customer,Jawa Barat,full service,-,-,25,353,0,0,0
+202000000076748127,customer,Jawa Barat,full service,-,-,56,96,0,0,0
+202100000007133347,customer,,basic service,-,-,19,8,0,0,1
+202000000113526418,customer,,basic service,-,-,39,38,0,0,0
+202100000006751054,customer,Jawa Barat,full service,-,-,20,80,0,0,0
+202000000036240275,customer,,basic service,-,-,75,1,0,0,0
+202000000131165654,customer,Jawa Barat,full service,-,-,24,10,0,0,0
+202000000080798751,customer,Jawa Timur,full service,-,-,54,197,0,1,0
+202000000100476867,customer,Jawa Barat,full service,-,-,45,68,0,0,0
+202000000131127143,customer,Jawa Barat,full service,-,-,24,42,0,0,0
+202000000069518665,customer,Dki  Jakarta,full service,-,-,59,43,0,0,0
+202100000007250477,customer,,basic service,-,-,19,4,0,0,1
+202100000007917198,customer,,basic service,-,-,16,2,0,0,1
+202000000096967698,customer,Jawa Tengah,full service,-,-,46,2,0,0,0
+201000000003757482,merchant,,PT,Telco Product,Prepaid,48,143,0,0,0
+202000000087924536,customer,Jawa Timur,full service,-,-,50,98,0,0,0
+202000000069517594,customer,Dki  Jakarta,full service,-,-,59,47,0,0,0
+202000000063462777,customer,Jawa Tengah,full service,-,-,61,111,0,0,0
+202000000125911981,customer,Jawa Barat,full service,-,-,30,9,0,0,0
+202000000126402965,customer,Jawa Barat,full service,-,-,29,48,0,0,0
+201000000001195015,merchant,,PT,Bank,Linked bank,73,14700686,7484017,94737,0
+202100000008266871,customer,,basic service,-,-,15,16,0,0,0
+202000000069518119,customer,Dki  Jakarta,full service,-,-,59,47,0,0,0
+201000000003184195,merchant,,Perorangan,Others,,51,0,1,0,2
+202100000007397973,customer,Jawa Barat,full service,-,-,18,45,0,0,0
+202100000007634820,customer,,basic service,-,-,17,4,0,0,1
+202000000116582669,customer,Jawa Barat,full service,-,-,37,17,0,0,0
+202000000130631986,customer,Dki  Jakarta,full service,-,-,25,35,0,0,0
+202000000072293256,customer,Jawa Tengah,full service,-,-,58,9,0,0,0
+202100000008107085,customer,,basic service,-,-,16,3,0,0,1
+202000000129992822,customer,,basic service,-,-,25,6,0,0,0
+202100000007332126,customer,Jawa Barat,full service,-,-,18,41,0,0,0
+202000000125962525,customer,Jawa Barat,full service,-,-,30,129,0,4,0
+202100000007180856,customer,Dki  Jakarta,full service,-,-,19,106,0,0,0
+202100000006826919,customer,,basic service,-,-,20,47,0,1,0
+202000000004207207,customer,,basic service,-,-,99,4,0,0,0
+202000000035245949,customer,,basic service,-,-,76,1,0,0,0
+202000000126356897,customer,Jawa Barat,full service,-,-,29,211,0,0,0
+202000000009923172,customer,,basic service,-,-,99,3,0,0,0
+202000000126395045,customer,Jawa Barat,basic service,-,-,29,50,0,0,0
+202000000118265161,customer,Jawa Barat,full service,-,-,36,37,0,0,0
+201000000003941697,merchant,,Perorangan,F&B,,46,0,3,0,2
+202100000006759074,customer,Banten,full service,-,-,20,128,0,0,0
+202000000131238331,customer,Jawa Barat,full service,-,-,24,94,0,0,0
+202000000074869764,customer,,basic service,-,-,57,3,0,0,0
+202000000042094168,customer,Jawa Timur,full service,-,-,61,103,0,0,0
+202100000007239823,customer,,basic service,-,-,19,141,0,64,0
+202100000007677125,customer,,basic service,-,-,17,38,0,0,0
+201000000002533376,merchant,,Perorangan,Retail,Marketplace and online retail,53,0,5,0,1
+202000000044201575,customer,,basic service,-,-,69,3,0,0,0
+202000000048656593,customer,Sumatera Barat,full service,-,-,65,1,0,0,0
+202000000067400200,customer,Jawa Tengah,full service,-,-,60,54,0,0,0
+202000000052577632,customer,,basic service,-,-,65,35,0,0,0
+202100000007191692,customer,Jawa Barat,full service,-,-,19,57,0,0,0
+202100000005790514,customer,Jawa Barat,full service,-,-,22,142,0,0,0
+202000000105412493,customer,Jawa Tengah,full service,-,-,43,1,0,0,0
+202000000087850297,customer,Jawa Tengah,full service,-,-,50,99,0,62,0
+202000000066535374,customer,Sumatera Utara,full service,-,-,60,20,0,0,0
+201000000004936768,merchant,,Perorangan,Retail,Retail-non CICO,37,0,4,0,1
+202000000089115241,customer,Jawa Timur,full service,-,-,49,64,0,0,0
+202000000115522398,customer,Jawa Timur,full service,-,-,38,51,0,1,0
+202000000067192365,customer,D.I. Yogyakarta,full service,-,-,60,3,0,0,0
+202000000126028034,customer,Jawa Barat,full service,-,-,30,75,0,0,0
+202100000007309943,customer,Jawa Barat,full service,-,-,19,118,0,0,0
+202000000025262528,customer,,basic service,-,-,80,3,0,0,0
+202000000125966474,customer,Jawa Barat,full service,-,-,30,82,0,0,0
+202000000093817995,customer,Jawa Tengah,full service,-,-,47,56,0,0,0
+202100000008084260,customer,,basic service,-,-,16,5,0,0,0
+202000000115982679,customer,,basic service,-,-,37,27,0,0,0
+201000000003925223,merchant,,PT,Retail,Retail-non CICO,47,0,4718,0,0
+202000000130008237,customer,Lampung,full service,-,-,25,497,0,0,0
+201000000004489655,merchant,,Perorangan,Retail,Retail-non CICO,41,0,15,0,1
+201000000003925209,merchant,,CV,Retail,Retail-non CICO,47,0,1788,0,0
+202000000007568701,customer,,basic service,-,-,112,4,0,0,0
+202100000007198871,customer,Jawa Barat,full service,-,-,19,103,0,0,0
+202000000068612443,customer,Jawa Timur,full service,-,-,59,32,0,0,0
+202100000008070246,customer,,basic service,-,-,16,4,0,0,1
+202000000126427045,customer,,basic service,-,-,29,47,0,0,0
+202000000021705308,customer,Dki  Jakarta,full service,-,-,82,33,0,0,0
+202000000003027234,customer,,basic service,-,-,188,4,0,0,0
+202000000128818935,customer,,basic service,-,-,26,12,0,0,0
+202000000070766351,customer,Sulawesi Utara,full service,-,-,58,82,0,4,0

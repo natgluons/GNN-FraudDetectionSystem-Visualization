@@ -1,18 +1,23 @@
 import torch
 import torch.nn.functional as F
 from torch_geometric.data import Data
+from torch_geometric.nn import MessagePassing
 import pandas as pd
 from sklearn.preprocessing import LabelEncoder
 
-# Custom HGT Layer (Simplified to only handle node types)
-class CustomHGTLayer(torch.nn.Module):
+# Custom HGT Layer (Handling edge features as well)
+class CustomHGTLayer(MessagePassing):
     def __init__(self, in_channels, out_channels):
-        super(CustomHGTLayer, self).__init__()
-        self.linear = torch.nn.Linear(in_channels, out_channels)
+        super(CustomHGTLayer, self).__init__(aggr='mean')  # "Mean" aggregation.
+        self.linear = torch.nn.Linear(in_channels + 1, out_channels)  # Add 1 for edge attributes.
 
-    def forward(self, x, edge_index):
-        # Simple message passing using the linear transformation
-        return F.relu(self.linear(x))
+    def forward(self, x, edge_index, edge_attr):
+        # Propagate the message passing
+        return self.propagate(edge_index, x=x, edge_attr=edge_attr)
+
+    def message(self, x_j, edge_attr):
+        # Combine node features with edge features
+        return F.relu(self.linear(torch.cat([x_j, edge_attr.unsqueeze(1)], dim=-1)))
 
 # Function to load and preprocess data
 def load_data(node_path, edge_path):
@@ -24,23 +29,7 @@ def load_data(node_path, edge_path):
     edges['source_id'] = edges['source_id'].astype(str).str.strip()
     edges['target_id'] = edges['target_id'].astype(str).str.strip()
 
-    # Debugging: Print the unique values to ensure they match
-    print("Unique user_ids in nodes:", sorted(nodes['user_id'].unique()))
-    print("Unique source_ids in edges:", sorted(edges['source_id'].unique()))
-    print("Unique target_ids in edges:", sorted(edges['target_id'].unique()))
-
-    # Ensure that all source and target nodes are in the nodes dataset
-    node_ids = set(nodes['user_id'])
-    edge_source_ids = set(edges['source_id'])
-    edge_target_ids = set(edges['target_id'])
-
-    # Filter edges to only include those where both source and target are in the nodes dataset
-    valid_edges = edges[edges['source_id'].isin(node_ids) & edges['target_id'].isin(node_ids)]
-    
-    if len(valid_edges) != len(edges):
-        print(f"Skipping {len(edges) - len(valid_edges)} edges due to missing nodes.")
-
-    return nodes, valid_edges
+    return nodes, edges
 
 def preprocess(nodes, edges):
     # Convert categorical columns to strings for encoding
@@ -92,22 +81,18 @@ class CustomHGTModel(torch.nn.Module):
         self.layer1 = CustomHGTLayer(in_channels, hidden_channels)
         self.layer2 = CustomHGTLayer(hidden_channels, out_channels)
 
-    def forward(self, x, edge_index):
-        x = F.relu(self.layer1(x, edge_index))
-        x = F.relu(self.layer2(x, edge_index))
+    def forward(self, x, edge_index, edge_attr):
+        x = F.relu(self.layer1(x, edge_index, edge_attr))
+        x = F.relu(self.layer2(x, edge_index, edge_attr))
         return x
 
 def train_model(model, data, epochs=10, lr=0.001):
     optimizer = torch.optim.Adam(model.parameters(), lr=lr)
     model.train()
 
-    # Debugging: Check if data.y exists and is valid
-    if data.y is None:
-        raise ValueError("Target data (y) is missing from the dataset.")
-
     for epoch in range(epochs):
         optimizer.zero_grad()
-        out = model(data.x, data.edge_index)
+        out = model(data.x, data.edge_index, data.edge_attr)
         loss = F.mse_loss(out, data.y)
         loss.backward()
         optimizer.step()
@@ -117,8 +102,11 @@ def train_model(model, data, epochs=10, lr=0.001):
 
 def main():
     # Paths to the data
-    node_path = './gnn_sampledata/nodes.csv'
-    edge_path = './gnn_sampledata/edges.csv'
+    # node_path = './dummydata/training_nodes_dummydata.csv'
+    # edge_path = './dummydata/training_edges_dummydata.csv'
+
+    node_path = './realdata/training_nodes_realdata.csv'
+    edge_path = './realdata/training_edges_realdata.csv'
 
     # Load and preprocess the data
     nodes, edges = load_data(node_path, edge_path)
@@ -133,10 +121,12 @@ def main():
     # Prepare data for PyTorch Geometric
     node_features = torch.tensor(nodes.drop(columns=['user_id', 'user_idx']).values, dtype=torch.float)
     edge_index = torch.tensor([edges['source_idx'].values, edges['target_idx'].values], dtype=torch.long)
+    edge_attr = torch.tensor(edges['trans_amount'].values, dtype=torch.float)  # Assuming 'trans_amount' as edge attribute
     
-    # Debugging: Check if node_features and edge_index are correct
+    # Debugging: Check if node_features, edge_index, and edge_attr are correct
     print(f"Node features shape: {node_features.shape}")
     print(f"Edge index shape: {edge_index.shape}")
+    print(f"Edge attribute shape: {edge_attr.shape}")
 
     # Assuming 'reported_risk' as the target
     y = torch.tensor(nodes['reported_risk'].values, dtype=torch.float).view(-1, 1)
@@ -144,6 +134,7 @@ def main():
     data = Data(
         x=node_features,
         edge_index=edge_index,
+        edge_attr=edge_attr,
         y=y
     )
 
@@ -155,9 +146,14 @@ def main():
     trained_model = train_model(model, data, epochs=10, lr=0.001)
 
     # Generate embeddings
-    embeddings = trained_model(data.x, data.edge_index)
+    embeddings = trained_model(data.x, data.edge_index, data.edge_attr)
     print("Node embeddings:", embeddings)
+
+    # Save the trained model
+    # model_save_path = './model/trained_hgt_model_dummydata.pth'
+    model_save_path = './model/trained_hgt_model_realdata.pth'
+    torch.save(trained_model.state_dict(), model_save_path)
+    print(f"Model saved to {model_save_path}")
 
 if __name__ == "__main__":
     main()
- #

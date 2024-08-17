@@ -1,0 +1,21 @@
+source_id,target_id,trans_amount,trans_type,description,label
+31,32,500,credit,Payment for goods,0
+33,34,700,debit,Refund,1
+35,36,1000,credit,Loan payment,0
+37,38,200,debit,Service charge,1
+39,40,300,credit,Purchase,0
+31,33,450,credit,Payment for services,0
+32,34,800,debit,Product return,1
+35,37,1500,credit,Business investment,0
+38,39,250,debit,Subscription fee,1
+36,40,350,credit,Membership fee,0
+32,35,600,credit,Rent payment,0
+31,38,400,credit,Consultation fee,0
+37,34,900,debit,Overdraft protection,1
+39,31,750,credit,Equipment purchase,0
+33,36,500,debit,Service refund,1
+34,40,1200,credit,Real estate purchase,0
+35,32,950,debit,Expense reimbursement,1
+38,37,300,credit,Dividend payment,0
+40,33,400,debit,Maintenance fee,1
+31,36,550,credit,Event sponsorship,0

@@ -1,0 +1,33 @@
+source_id,target_id,trans_amount,trans_type,description,label
+1,2,200,debit,Online purchase,1
+3,4,450,credit,Loan repayment,0
+5,6,600,debit,Service fee,1
+7,8,350,credit,Utility payment,0
+9,10,1200,credit,Product sale,0
+11,12,800,debit,Subscription payment,1
+13,14,400,credit,Rent payment,0
+15,16,500,debit,Loan processing fee,1
+17,18,300,credit,Purchase order,0
+19,20,1000,debit,Travel expense,1
+21,22,750,credit,Salary,0
+23,24,250,debit,Insurance premium,1
+25,26,550,credit,Investment income,0
+27,28,950,debit,Healthcare payment,1
+29,30,400,credit,Consultation fee,0
+1,3,700,credit,Freelance work,0
+2,4,600,debit,Event registration,1
+5,7,850,credit,Contract payment,0
+8,10,450,debit,Advertising expense,1
+11,13,900,credit,Real estate sale,0
+14,16,1200,debit,Product return,1
+17,19,500,credit,Retail payment,0
+20,22,700,debit,Legal fee,1
+23,25,600,credit,Project bonus,0
+26,28,850,debit,Office supplies,1
+29,1,450,credit,Service contract,0
+3,6,400,debit,Loan application fee,1
+4,8,1000,credit,Revenue,0
+9,12,750,debit,Equipment purchase,1
+15,18,500,credit,Profit distribution,0
+21,24,350,debit,Medical bill,1
+27,30,950,credit,Sale of goods,0

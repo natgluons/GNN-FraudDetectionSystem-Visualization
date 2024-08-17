@@ -1,8 +1,0 @@
-source_id,target_id,trans_amount,trans_type,date
-1,2,100,online,2024-01-01
-2,3,200,offline,2024-01-02
-3,4,150,online,2024-01-03
-4,5,250,offline,2024-01-04
-5,6,300,online,2024-01-05
-6,1,350,offline,2024-01-06
- 
