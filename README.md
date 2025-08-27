@@ -73,6 +73,7 @@ Use the `index.html` and `network_graph.js` files to visualize the network graph
 - **K-means Clustering**: Applied to cluster similar behaviors together, separating fraudulent and non-fraudulent entities.
 - **Syndicate Score**: A composite score calculated using in-degree, out-degree, and betweenness centrality measures to identify potential syndicate activities.
 
-![image](https://github.com/user-attachments/assets/b3acadc2-304e-4343-861f-f425453fb4a3)
+<img width="1115" height="728" alt="network-graph" src="https://github.com/user-attachments/assets/cf3afde9-429a-4fdd-8523-58521e1137c8" />
+
 
 
